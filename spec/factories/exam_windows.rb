@@ -1,6 +1,8 @@
 FactoryBot.define do
+  # https://github.com/faker-ruby/faker/blob/master/doc/default/time.md 
   factory :exam_window do
-    start_time { "2021-04-29 14:47:28" }
-    end_time { "2021-04-29 14:47:28" }
+    I18n.locale = 'en-US'
+    start_time { Faker::Time.between(from: DateTime.now - 4, to: DateTime.now, format: :long) }
+    end_time { Faker::Time.between(from: DateTime.now - 2, to: DateTime.now, format: :long) }
   end
 end

@@ -1,7 +1,8 @@
 FactoryBot.define do
   factory :user do
-    first_name { "MyString" }
-    last_name { "MyString" }
-    phone_number { "MyString" }
+    Faker::Config.locale = 'en-US'
+    first_name { Faker::Name.unique.first_name  }
+    last_name { Faker::Name.unique.last_name  }
+    phone_number { Faker::PhoneNumber.cell_phone }
   end
 end

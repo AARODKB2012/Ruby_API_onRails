@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :exam do
-    exam_id { 1 }
+    exam_id { Faker::Number.number(digits 2 ) }
   end
 end
